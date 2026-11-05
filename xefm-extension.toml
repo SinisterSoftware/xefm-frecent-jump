@@ -1,0 +1,17 @@
+[extension]
+id = "frecent-jump"
+version = "0.1.0"
+api_version = 1
+name = "Frecent Jump"
+description = "Jump to frequently and recently visited directories."
+min_xefm = "1.10.0"
+updates = "github:SinisterSoftware/xefm-frecent-jump"
+
+[contributes.actions]
+"frecent.jump" = { entry = "frecent_jump.actions:jump", description = "Jump to a frequently or recently visited directory" }
+
+[contributes.event_hooks]
+directory_changed = "frecent_jump.logic:on_directory_changed"
+
+[contributes.key_suggestions]
+"frecent.jump" = ["Alt-F"]
